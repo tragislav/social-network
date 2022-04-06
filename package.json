@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "prepare": "husky install"
+    "lint": "eslint \"src/**/*.ts?(x)\"",
+    "lint:styles": "npm run lint:styles:css && npm run lint:styles:ts",
+    "lint:styles:css": "stylelint \"src/**/*.css\" --config css.stylelintrc.json",
+    "lint:styles:ts": "stylelint \"src/**/*.*.ts\" --config ts.stylelintrc.json",
+    "prepare": "husky install",
+    "prettier": "prettier",
+    "start": "react-scripts start",
+    "test": "react-scripts test",
+    "tsc": "tsc"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
@@ -30,9 +36,9 @@
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "eslint": "^8.12.0",
-    "eslint-config": "^0.3.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-prettier": "^8.5.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "prettier": "^2.6.2",
